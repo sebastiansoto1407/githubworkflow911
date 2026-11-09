@@ -1,0 +1,21 @@
+:root { font-family: system-ui, sans-serif; color: #172033; background: #f4f7fb; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.contenedor { max-width: 1050px; margin: 0 auto; padding: 44px 20px; }
+header { margin-bottom: 28px; }
+header h1 { margin: 6px 0; font-size: clamp(2rem, 5vw, 3rem); }
+header p { color: #526074; }
+.etiqueta { color: #345fd0; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+.columnas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.tarjeta { background: white; padding: 24px; border: 1px solid #e2e7f0; border-radius: 16px; box-shadow: 0 8px 28px #192b4b0a; }
+h2 { margin-top: 0; }
+label { display: block; margin: 14px 0 7px; font-weight: 600; }
+.fila { display: flex; gap: 8px; }
+input, select { min-width: 0; width: 100%; padding: 11px; border: 1px solid #c9d2df; border-radius: 8px; font: inherit; }
+button { padding: 11px 16px; border: 0; border-radius: 8px; color: white; background: #345fd0; font: inherit; font-weight: 600; cursor: pointer; }
+button:hover { background: #2447a7; }
+ul { list-style: none; padding: 0; margin: 24px 0 0; }
+li { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 0; border-top: 1px solid #edf0f5; }
+small { display: block; color: #66758b; }
+.mensaje { padding: 12px 16px; background: #e8efff; border-radius: 8px; }
+@media (max-width: 700px) { .columnas { grid-template-columns: 1fr; } }

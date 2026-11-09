@@ -1,20 +1,21 @@
 import json
+from pathlib import Path
 from typing import Dict, Any, List
 
-DB_FILE = "app/db.json"
+DB_FILE = Path(__file__).with_name("db.json")
 
 def _load_db() -> Dict[str, Any]:
     """Carga los datos del archivo JSON."""
     try:
-        with open(DB_FILE, 'r') as f:
-            return json.load(f)
+        with open(DB_FILE, 'r', encoding='utf-8') as archivo:
+            return json.load(archivo)
     except FileNotFoundError:
         return {"categorias": [], "productos": []}
 
-def _save_db(db_data: Dict[str, Any]):
+def _save_db(datos: Dict[str, Any]):
     """Guarda los datos en el archivo JSON."""
-    with open(DB_FILE, 'w') as f:
-        json.dump(db_data, f, indent=2)
+    with open(DB_FILE, 'w', encoding='utf-8') as archivo:
+        json.dump(datos, archivo, indent=2, ensure_ascii=False)
 
 def get_categorias() -> List[dict]:
     return _load_db().get("categorias", [])
